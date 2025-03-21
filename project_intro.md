@@ -3,3 +3,5 @@
 Blah blah blah
 
 ## The project title will be: HughMungus
+
+### Time scale is 3 months
