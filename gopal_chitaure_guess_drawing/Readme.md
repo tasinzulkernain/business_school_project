@@ -47,7 +47,7 @@ conda activate quickdraw_env
 ### 2️⃣ Install Required Packages
 
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3️⃣ Run pari.py
