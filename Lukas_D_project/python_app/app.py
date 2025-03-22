@@ -9,7 +9,7 @@ app.secret_key = "supersecretkey"
 
 # Main account to observe others
 MAIN_ACCOUNT = "kornelamarchevka"
-MAIN_PASSWORD = "simsonai55"  # can be hidden via .env later
+MAIN_PASSWORD =   # can be hidden via .env later
 
 # Simple login credentials for dashboard
 ADMIN_USERNAME = "admin"
