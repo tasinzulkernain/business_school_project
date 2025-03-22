@@ -50,6 +50,9 @@ def process_invoices(folder_path, output_csv="invoice_data.csv"):
     
     print(f"✅ Processed {len(invoice_list)} invoices. Data saved to '{output_csv}'.")
 
+    # Automatically open the generated CSV file
+    os.startfile(output_csv)
+
 # Example usage
 folder_path = "invoices_folder"  # Change this to the folder containing your PDFs
 process_invoices(folder_path)
