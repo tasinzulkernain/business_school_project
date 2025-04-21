@@ -1,7 +1,0 @@
-{
-    "python.analysis.extraPaths": [
-        "./aliaksei_f_folder/scripts"
-    ],
-    "IDX.aI.enableInlineCompletion": true,
-    "IDX.aI.enableCodebaseIndexing": true
-}
