@@ -109,18 +109,37 @@ def get_currencies_from_data(data):
     return currencies
 
 def convert_to_eur(data, rates):
-    converted_data = []
+    # Dictionary to store aggregated amounts by game name and period
+    aggregated_data = {}
+    
     for row in data:
         if '(' in row['Name']:
             game_name, currency = row['Name'].split('(')
+            game_name = game_name.strip()
             currency = currency.strip(')')
+            period = row['Period']
+            
             if currency in rates:
                 converted_amount = float(row['Sum']) * rates[currency]
-                converted_data.append({
-                    'Period': row['Period'],
-                    'Name': game_name.strip(),
-                    'Sum': converted_amount
-                })
+                
+                # Create a key for the game and period
+                key = (game_name, period)
+                
+                # Add or update the aggregated amount
+                if key in aggregated_data:
+                    aggregated_data[key] += converted_amount
+                else:
+                    aggregated_data[key] = converted_amount
+    
+    # Convert the aggregated data back to a list format
+    converted_data = []
+    for (game_name, period), amount in aggregated_data.items():
+        converted_data.append({
+            'Period': period,
+            'Name': game_name,
+            'Sum': round(amount, 2)  # Round to 2 decimal places
+        })
+    
     return converted_data
 
 @app.route('/')
