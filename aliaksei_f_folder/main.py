@@ -4,13 +4,14 @@ import sys
 # Add the scripts directory to the sys.path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
 
-from parser import parse_apple_report, save_to_csv
-from config import GAME_MAPPING, DEFAULT_GAME_NAME
+from scripts.parser import parse_apple_report, save_to_csv
+from scripts.config import GAME_MAPPING, DEFAULT_GAME_NAME
+from web.app import app
 
 INPUT_FOLDER = "data/input/"
 OUTPUT_FILE = "data/output/combined_output.csv"
 
-def main():
+def process_files():
     all_data = {}
 
     # Iterate over all .txt files in the input folder
@@ -27,6 +28,14 @@ def main():
     # Save all parsed data into a single CSV file
     save_to_csv(all_data, OUTPUT_FILE)
     print(f"All reports have been processed and saved to {OUTPUT_FILE}")
+
+def main():
+    # Process any existing files
+    process_files()
+    
+    # Start the Flask web server
+    print("Starting web server...")
+    app.run(host='0.0.0.0', port=5001, debug=True)
 
 if __name__ == "__main__":
     main()

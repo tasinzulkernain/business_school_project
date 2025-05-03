@@ -2,7 +2,14 @@ import csv
 import os
 from datetime import datetime
 from collections import defaultdict
-from config import GAME_MAPPING, DEFAULT_GAME_NAME
+import sys
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+# Add the parent directory to sys.path
+sys.path.append(str(Path(__file__).parent.parent))
+
+from scripts.config import GAME_MAPPING, DEFAULT_GAME_NAME
 
 def extract_period(file_path):
     """
@@ -129,3 +136,29 @@ def save_to_csv(all_data, output_file):
 
         for (period, game_currency), total in sorted_data:
             writer.writerow([period, game_currency, round(total, 2)])
+
+def process_files(input_folder: str, output_file: str) -> Tuple[bool, List[str]]:
+    """
+    Process all .txt files in the input folder and save results to output file.
+    Returns (success, list of processed files)
+    """
+    all_data = {}
+    processed_files = []
+    
+    for filename in os.listdir(input_folder):
+        if filename.endswith('.txt'):
+            file_path = os.path.join(input_folder, filename)
+            try:
+                report_data = parse_apple_report(file_path)
+                # Merge data into all_data
+                for key, value in report_data.items():
+                    all_data[key] = all_data.get(key, 0) + value
+                processed_files.append(filename)
+            except Exception as e:
+                print(f"Error processing {filename}: {str(e)}")
+                continue
+    
+    if all_data:
+        save_to_csv(all_data, output_file)
+        return True, processed_files
+    return False, processed_files
