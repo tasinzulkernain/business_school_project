@@ -1,15 +1,21 @@
 # === Virtual environment and unnecessary files ===
 venv/
 sentiment_env/
+bert_env/
+results/
 *.pyc
 __pycache__/
 *.pkl
 *.log
 
+# === Ignore trained models ===
+models/
+
 # === IDE and OS files ===
 .vscode/
 .idea/
 *.DS_Store
+.DS_Store
 
 # === Python packaging, cache, and build ===
 *.egg-info/
