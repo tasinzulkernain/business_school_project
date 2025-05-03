@@ -7,7 +7,7 @@ A Python tool which converts raw reports into structured, currency-normalized su
 
 Game developers working with Apple App Store often use built-in analytics to monitor in-game sales. While these tools offer convenient summaries, they have limitations in precision and customization. For those looking to gain more control and insight, working with raw transaction data provides a valuable alternative. 
 
-App Store connect allows developers to download raw transaction-level reports in TXT format. However, these files are hard to work with. Each report may contain thousands of entries, lacks a structured format, and includes extraneous header and footer information. Additionally, transactions come in various currencies, making financial aggregation impossible without conversion. The primary goal is to process this data into structured summaries that are accurate and insightful.
+App Store Connect allows developers to download raw transaction-level reports in TXT format. However, these files are hard to work with. Each report may contain thousands of entries, lacks a structured format, and includes extraneous header and footer information. Additionally, transactions come in various currencies, making financial aggregation impossible without conversion. The primary goal is to process this data into structured summaries that are accurate and insightful.
 
 ## Data Analysis Process
 
@@ -34,4 +34,4 @@ This project demonstrated that raw TXT reports from App Store Connect can be tra
 
 ## Next Steps
 
-Future improvements may include adding support for reports from other platforms such as Google Play, introducing more flexible filters for dates, countries, or SKUs, and acquiring a richer dataset that would make machine learning models more effective. Automating the monthly report processing pipeline would also make the tool more useful.
+Future improvements may include adding support for reports from other platforms (Google Play, Amazon App Store, etc.), introducing more flexible filters for dates, countries, or SKUs, and acquiring a richer dataset that would make machine learning models more effective. Automating the monthly report processing pipeline would also make the tool more useful.
