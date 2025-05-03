@@ -85,17 +85,3 @@ This application processes Apple transaction reports in TXT format and provides 
 ### Data Export
 - Click "Download" to export the aggregated data as CSV
 - The CSV file includes all processed data with EUR conversions
-
-## Application Structure
-- `main.py` - Entry point of the application
-- `web/app.py` - Flask web application (dashboard)
-- `scripts/` - Core processing scripts
-- `data/input/` - Directory for input TXT files
-- `data/output/` - Directory for generated CSV files
-
-## Configuration
-- Adjust `config.py` in the `scripts/` directory to match your Apple Identifiers
-- Customize dashboard settings through the web interface
-
-## Support
-For issues or questions, please open an issue in the repository.

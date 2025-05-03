@@ -256,6 +256,9 @@ def exchange_rates():
     # Add any currencies that are in the rates but not in current data
     currencies.update(set(rates.keys()))
     
+    # Remove EUR from the list since we don't need its exchange rate
+    currencies.discard('EUR')
+    
     return render_template('exchange_rates.html', 
                          currencies=sorted(list(currencies)), 
                          rates=rates)
