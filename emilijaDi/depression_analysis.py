@@ -298,7 +298,7 @@ def create_dashboard(df):
     return app
 
 def main():
-    file_path = 'student_depression_dataset.csv'
+    file_path = 'student_depression_dataset_usa.csv'
     df = read_data(file_path)
     
     if df is not None:
