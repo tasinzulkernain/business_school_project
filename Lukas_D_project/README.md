@@ -45,7 +45,7 @@ remove <number>     → Stop tracking
 
 ## 📸 Screenshot
 
-> *(Include a screenshot like your Telegram bot replying to “show all”)*
+![image alt](https://github.com/dzisevic19/business_school_project/blob/main/Lukas_D_project/python_app/lukas_d_final/Screenshot%202025-05-04%20at%2018.23.25.png?raw=true)
 
 ---
 
