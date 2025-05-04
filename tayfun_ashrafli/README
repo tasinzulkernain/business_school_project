@@ -1,22 +1,17 @@
-Smoke-Aware City Forecasting
+📊 Smoke-Aware City Forecasting
 
- 
-
-A lightweight machine learning pipeline to forecast 24‑h ahead PM₂.₅ concentrations in Reno, NV, using satellite fire-hotspot counts and historical air-quality measurements.
+A lightweight ML pipeline to forecast next-day PM₂.₅ in Reno, NV, using  
+satellite fire-hotspot counts and historical air-quality readings.
 
 🔍 Project Overview
 
-Wildfire smoke is Reno’s major air-quality threat, driving spikes in fine particulate matter (PM₂.₅) that harm public health. This repository demonstrates a simple, reproducible workflow that:
+Wildfire smoke drives dangerous PM₂.₅ spikes. This project shows how to:
 
-Ingests hourly PM₂.₅ data from the OpenAQ v3 API (2015–2025).
-
-Downloads daily satellite fire-pixel counts from NASA’s MODIS archive (2021–2025).
-
-Performs exploratory data analysis (EDA) with line plots and daily boxplots.
-
-Establishes a naïve baseline (tomorrow = yesterday) with MAE ≈ 3.91 µg/m³.
-
-Trains a Random Forest regressor on two features (fire-pixels + yesterday’s PM₂.₅), reducing MAE to ≈ 1.72 µg/m³.
+1. **Ingest** hourly PM₂.₅ via the OpenAQ v3 API (2015–2025)  
+2. **Download** daily fire-pixel counts from NASA’s MODIS archive (2021–2025)  
+3. **Explore** the data with time-series and box plots  
+4. **Baseline** forecast: “tomorrow = yesterday” → MAE ≈ 3.91 µg/m³  
+5. **Random Forest** model (fire + yesterday’s PM₂.₅) → MAE ≈ 1.72 µg/m³
 
 📂 Repository Structure
 
