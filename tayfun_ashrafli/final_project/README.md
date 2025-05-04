@@ -18,8 +18,8 @@
 
 ## 🔍 Project Overview
 
-Wildfire smoke is Reno’s major air-quality threat, driving dangerous PM₂.₅ spikes.  
-This repo demonstrates a simple, end-to-end workflow:
+A lightweight machine learning pipeline to forecast 24‑h ahead PM₂.₅ concentrations in Reno, NV, 
+using satellite fire-hotspot counts and historical air-quality measurements.
 
 1. **Ingest** hourly PM₂.₅ via OpenAQ v3 API (2015–2025)  
 2. **Download** daily MODIS fire-pixel counts (2021–2025)  
@@ -47,22 +47,42 @@ smoke-aware-city/
 └── LICENSE                 # MIT License
 
 
-🚀 # 1. Clone
+🚀 Getting Started
+
+1. Clone the repository
+
 git clone https://github.com/<your-username>/smoke-aware-city.git
 cd smoke-aware-city
 
-# 2. Setup environment
+2. Create the environment
+
+Using Conda:
+
 conda env create -f environment.yml
 conda activate smoke-aware-env
 
-# 3. Launch notebooks
-jupyter lab
-# Run in order: 01_download → 02_eda → 03_baseline → 05_model
+Or with venv + pip:
+
+python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate    # Windows
+pip install -r requirements.txt
+
+3. Ingest data
+
+Open notebooks/01_download.ipynb and run all cells to download PM₂.₅ and fire-pixel data.
+Inspect data/ to verify that CSV files appear.
+
+4. Explore and model
+
+Sequentially run the EDA, baseline, and model notebooks:
+notebooks/02_eda.ipynb
+notebooks/03_baseline.ipynb
+notebooks/05_model.ipynb
+Each notebook prints metrics and displays key plots.
 
 📈 Results
 
 Baseline MAE (yesterday → tomorrow): 3.91 µg/m³
-
 Random Forest MAE (with fire-pixels + previous PM₂.₅): 1.72 µg/m³
-
 These results illustrate that satellite-detected fire activity is a strong predictor of next-day PM₂.₅.
