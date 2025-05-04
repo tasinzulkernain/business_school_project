@@ -9,7 +9,12 @@
 
 ---
 
-## 🔍 Project Overview - Smoke‑Aware City Forecasting
+## Smoke‑Aware City Forecasting
+Wildfire smoke significantly elevates fine particulate matter (PM₂.₅) levels, posing health risks to Reno residents. This project builds a simple forecasting pipeline to predict tomorrow’s average PM₂.₅ concentration using today’s satellite fire hotspot counts and yesterday’s PM₂.₅ readings. A reliable 24‑hour ahead forecast enables public health agencies and individuals to make informed decisions about outdoor activities.
+
+---
+
+## 🔍 Project Overview
 
 Wildfire smoke is Reno’s major air-quality threat, driving dangerous PM₂.₅ spikes.  
 This repo demonstrates a simple, end-to-end workflow:
