@@ -58,6 +58,6 @@ remove <number>     → Stop tracking
 ---
   
 ## 🚀 Future Ideas
-Add a web dashboard (Flask)
-Graph price history
-Multi-user support via chat IDs
+- Add a web dashboard (Flask)
+- Graph price history
+- Multi-user support via chat IDs
