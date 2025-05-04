@@ -31,7 +31,7 @@
 **Using `venv` (recommended):**
 
 ```bash
-python3 -m venv quickdraw_env
+python3.10 -m venv quickdraw_env
 source quickdraw_env/bin/activate        # macOS/Linux
 # OR
 quickdraw_env\Scripts\activate           # Windows
@@ -40,7 +40,7 @@ quickdraw_env\Scripts\activate           # Windows
 **Using `Conda` (alternative):**
 
 ```bash
-conda create --name quickdraw_env python=3.9
+conda create --name quickdraw_env python=3.10
 conda activate quickdraw_env
 ```
 
