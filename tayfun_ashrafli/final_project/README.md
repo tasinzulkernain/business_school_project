@@ -47,33 +47,30 @@ smoke-aware-city/
 └── LICENSE                 # MIT License
 
 
-🚀 Getting Started
+##🚀 Getting Started
 
 1. Clone the repository
 
 git clone https://github.com/<your-username>/smoke-aware-city.git
 cd smoke-aware-city
 
-2. Create the environment
+##2. Create the environment
 
 Using Conda:
-
 conda env create -f environment.yml
 conda activate smoke-aware-env
-
 Or with venv + pip:
-
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate    # Windows
 pip install -r requirements.txt
 
-3. Ingest data
+##3. Ingest data
 
 Open notebooks/01_download.ipynb and run all cells to download PM₂.₅ and fire-pixel data.
 Inspect data/ to verify that CSV files appear.
 
-4. Explore and model
+##4. Explore and model
 
 Sequentially run the EDA, baseline, and model notebooks:
 notebooks/02_eda.ipynb
@@ -81,7 +78,7 @@ notebooks/03_baseline.ipynb
 notebooks/05_model.ipynb
 Each notebook prints metrics and displays key plots.
 
-📈 Results
+##📈 Results
 
 Baseline MAE (yesterday → tomorrow): 3.91 µg/m³
 Random Forest MAE (with fire-pixels + previous PM₂.₅): 1.72 µg/m³
