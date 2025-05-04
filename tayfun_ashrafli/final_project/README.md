@@ -9,7 +9,7 @@
 
 ---
 
-## 🔍 Project Overview
+## 🔍 Project Overview - Smoke‑Aware City Forecasting
 
 Wildfire smoke is Reno’s major air-quality threat, driving dangerous PM₂.₅ spikes.  
 This repo demonstrates a simple, end-to-end workflow:
