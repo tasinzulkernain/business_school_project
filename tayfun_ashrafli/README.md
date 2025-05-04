@@ -1,82 +1,39 @@
-Smoke-Aware City Forecasting
-
- 
-
-A lightweight machine learning pipeline to forecast 24‑h ahead PM₂.₅ concentrations in Reno, NV, using satellite fire-hotspot counts and historical air-quality measurements.
+📊 Smoke-Aware City Forecasting
+A lightweight ML pipeline to forecast next-day PM₂.₅ in Reno, NV, using  
+satellite fire-hotspot counts and historical air-quality readings.
 
 🔍 Project Overview
 
 Wildfire smoke is Reno’s major air-quality threat, driving spikes in fine particulate matter (PM₂.₅) that harm public health. This repository demonstrates a simple, reproducible workflow that:
 
-Ingests hourly PM₂.₅ data from the OpenAQ v3 API (2015–2025).
+1. **Ingests** hourly PM₂.₅ via the OpenAQ v3 API (2015–2025)  
+2. **Downloads** daily fire-pixel counts from NASA’s MODIS archive (2021–2025)  
+3. **Explores** data with line plots & daily boxplots  
+4. **Baselines** forecast: “tomorrow = yesterday” → MAE ≈ 3.91 µg/m³  
+5. **Models** with Random Forest (fire + PM₂.₅ₜ₋₁) → MAE ≈ 1.72 µg/m³
 
-Downloads daily satellite fire-pixel counts from NASA’s MODIS archive (2021–2025).
-
-Performs exploratory data analysis (EDA) with line plots and daily boxplots.
-
-Establishes a naïve baseline (tomorrow = yesterday) with MAE ≈ 3.91 µg/m³.
-
-Trains a Random Forest regressor on two features (fire-pixels + yesterday’s PM₂.₅), reducing MAE to ≈ 1.72 µg/m³.
 
 📂 Repository Structure
 
 smoke-aware-city/
-├── data/                       # Raw and processed CSV files
-│   ├── pm25_Reno_2024-07-01.csv
-│   └── fires_Reno_2025.csv
-├── notebooks/                  # Jupyter notebooks for each phase
-│   ├── 01_download.ipynb       # Data ingestion scripts
-│   ├── 02_eda.ipynb            # Exploratory data analysis
-│   ├── 03_baseline.ipynb       # Baseline model & MAE
-│   └── 05_model.ipynb          # Random Forest model & evaluation
-├── figures/                    # Exported plot images
-├── environment.yml             # Conda environment specification
-├── README.md                   # Project overview and instructions
-└── LICENSE                     # MIT License
+├── data/
+├── notebooks/
+├── figures/
+├── environment.yml
+├── README.md
+└── LICENSE
 
-🚀 Getting Started
 
-1. Clone the repository
+🚀 Quickstart
 
-git clone https://github.com/<your-username>/smoke-aware-city.git
+```bash
+git clone https://github.com/you/smoke-aware-city.git
 cd smoke-aware-city
-
-2. Create the environment
-
-Using Conda:
-
 conda env create -f environment.yml
 conda activate smoke-aware-env
-
-Or with venv + pip:
-
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-.venv\Scripts\activate    # Windows
-pip install -r requirements.txt
-
-3. Ingest data
-
-Open notebooks/01_download.ipynb and run all cells to download PM₂.₅ and fire-pixel data.
-
-Inspect data/ to verify that CSV files appear.
-
-4. Explore and model
-
-Sequentially run the EDA, baseline, and model notebooks:
-
-notebooks/02_eda.ipynb
-
-notebooks/03_baseline.ipynb
-
-notebooks/05_model.ipynb
-
-Each notebook prints metrics and displays key plots.
+jupyter lab
 
 📈 Results
-
-Baseline MAE (yesterday → tomorrow): 3.91 µg/m³
-
-Random Forest MAE (with fire-pixels + previous PM₂.₅): 1.72 µg/m³
-
-These results illustrate that satellite-detected fire activity is a strong predictor of next-day PM₂.₅.
+Model	MAE (µg/m³)
+Baseline	3.91
+Random Forest	1.72
