@@ -2,7 +2,7 @@ import pandas as pd
 
 try:
     df = pd.read_csv('student-mat.csv', sep=';')
-    display(df.head())
+    print(df.head())
     print(df.shape)
 except FileNotFoundError:
     print("Error: 'student-mat.csv' not found. Please ensure the file exists in the current directory.")
