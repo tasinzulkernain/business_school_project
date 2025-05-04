@@ -46,6 +46,7 @@ smoke-aware-city/
 ├── README.md               # This file
 └── LICENSE                 # MIT License
 
+---
 
 ##🚀 Getting Started
 
@@ -53,6 +54,8 @@ smoke-aware-city/
 
 git clone https://github.com/<your-username>/smoke-aware-city.git
 cd smoke-aware-city
+
+---
 
 ##2. Create the environment
 
@@ -65,10 +68,14 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate    # Windows
 pip install -r requirements.txt
 
+---
+
 ##3. Ingest data
 
 Open notebooks/01_download.ipynb and run all cells to download PM₂.₅ and fire-pixel data.
 Inspect data/ to verify that CSV files appear.
+
+---
 
 ##4. Explore and model
 
@@ -77,6 +84,8 @@ notebooks/02_eda.ipynb
 notebooks/03_baseline.ipynb
 notebooks/05_model.ipynb
 Each notebook prints metrics and displays key plots.
+
+---
 
 ##📈 Results
 
